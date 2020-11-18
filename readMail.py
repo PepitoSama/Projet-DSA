@@ -11,10 +11,9 @@ def readAndWriteRow(path,writer):
     with open(path, 'r') as fp:
         msg_str = fp.read()
         headers = email.message_from_string(msg_str)
-        msg = email.message_from_string(msg_str).get_payload()
         fp.close()
 
         # write in csv
-        writer.writerow([headers['To'],headers['From'],headers['Subject'],headers['Date'],msg])
+        writer.writerow([headers['To'],headers['From'],headers['Subject'],headers['Date'],headers.get_payload()])
 
 # print('Content : ' + msg)
