@@ -37,7 +37,7 @@ def refresh_progress_bar(done_count, todo_count):
     print("Progress : {} (written) / {} (total)".format(done_count, todo_count), end="\r", flush=True)
 
 def write_header(writer):
-    writer.writerow(["_T","_F","_S","_D"])
+    writer.writerow(["_T","_F","_S","_D","_C"])
 
 def get_total_mail_count():
     mail_count = 0
